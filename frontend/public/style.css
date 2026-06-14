@@ -1,0 +1,59 @@
+﻿body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f3f7;
+  color: #1e293b;
+}
+
+.app-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+video,
+img {
+  width: 100%;
+  max-width: 640px;
+  border-radius: 12px;
+  margin-top: 12px;
+}
+
+button,
+input[type="file"] {
+  margin-top: 14px;
+}
+
+button {
+  background: #0f172a;
+  color: #fff;
+  padding: 10px 14px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1e293b;
+}
+
+#status {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+}
