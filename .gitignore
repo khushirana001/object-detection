@@ -23,3 +23,8 @@ Thumbs.db
 ## Misc
 *.log
 package-lock.json
+
+## Local machine learning artifacts
+backend/yolov8n.pt
+backend/app/static/output_videos/
+backend/app/temp/
