@@ -31,8 +31,16 @@ def process_video(file):
         cap.release()
         raise ValueError("Could not read video dimensions from the uploaded file")
 
-    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-    writer = cv2.VideoWriter(str(output_path), fourcc, fps, (w, h))
+    codec_candidates = ["avc1", "H264", "mp4v"]
+    writer = None
+    for codec in codec_candidates:
+        fourcc = cv2.VideoWriter_fourcc(*codec)
+        writer = cv2.VideoWriter(str(output_path), fourcc, fps, (w, h))
+        if writer.isOpened():
+            break
+    if writer is None or not writer.isOpened():
+        cap.release()
+        raise RuntimeError("Could not create video writer for any supported codec")
 
     while True:
         ret, frame = cap.read()

@@ -61,11 +61,11 @@ export default function CameraFeed() {
       setResultFrame(response.data.frame);
       setMetadata(response.data);
       setStatus(
-        `Detected ${response.data.object_count} object${response.data.object_count === 1 ? "" : "s"}.
-        `
+        `Detected ${response.data.object_count} object${response.data.object_count === 1 ? "" : "s"}.`
       );
     } catch (error) {
-      setStatus(error.response?.data || error.message);
+      const errMsg = error.response?.data?.detail || error.response?.data || error.message;
+      setStatus(errMsg);
     }
   };
 
